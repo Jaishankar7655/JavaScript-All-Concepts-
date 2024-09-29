@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    <style>
+        *{
+            font-family: poppins;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+      .container {
+        width: 95%;
+        margin: 100px auto;
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+        flex-wrap: wrap;
+        
+      }
+      .container p{
+        margin: 1rem 0;
+
+      }
+      .box1 {
+        box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        height: 400px;
+        width: 250px;
+        overflow: hidden;
+        object-fit: cover;
+        transition: transform 0.3s linear;
+        transform: scale(1);
+      }
+      .box1:hover{
+        transform: scale(1.04);
+        cursor: pointer;
+      }
+      img {
+        width: 100%;
+        height: 50%;
+        transform: scale(1);
+        transition: transform 0.3s linear;
+
+      }
+      img:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+      .content {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      let container = document.querySelector(".container");
+      let boxes = container.querySelectorAll(".box1");
+      fetch("https://dummyjson.com/products")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          data.products.forEach((product) => {
+            let div = document.createElement("div");
+            div.classList.add("box1");
+            div.innerHTML = `
+            <div class="box1">
+                 <img
+                    src="${product.thumbnail}"
+                alt=""
+                />
+            <div class="content">
+                <p><b>Title:</b>${product.title}</p>
+                <p><b>Price:</b>${product.price}</p>
+                <p><b>Stock:</b>${product.stock} pieces</p>
+            </div>
+            </div>
+            `;
+            container.append(div);
+          });
+        });
+    </script>
+  </body>
+</html>

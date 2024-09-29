@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    <style>
+        *{
+            margin: 20px 20px   ;
+            padding: 0;
+            font-family: cursive;
+            /* font-family:poppins; */
+        }
+    </style>
+</head>
+<body>
+    <h1 onmousemove='console.log("hello")' >Hello world</h1>
+    <p>Netligent technology </p>
+    <h3>HI javascript -ecmascript-6</h3>
+    <h3>HI javascript -ecmascript-6</h3>
+    <h3>HI javascript -ecmascript-6</h3>
+    <h3>HI javascript -ecmascript-6</h3>
+    <p class="hello" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Et earum consequuntur maiores animi expedita similique aut, molestias labore pariatur non quos eum dicta veniam voluptatibus facere commodi atque. Sapiente, provident?</p>
+    <p class="hello" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Et earum consequuntur maiores animi expedita similique aut, molestias labore pariatur non quos eum dicta veniam voluptatibus facere commodi atque. Sapiente, provident?</p>
+    <p class="hello" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Et earum consequuntur maiores animi expedita similique aut, molestias labore pariatur non quos eum dicta veniam voluptatibus facere commodi atque. Sapiente, provident?</p>
+    
+    <script>
+        let head = document.body.childNodes
+        let heading  = document.body.childNodes[0]
+        let heading1  = document.body.childNodes[1]
+        let heading2  = document.body.childNodes[2]
+        let heading3  = document.body.childNodes[3]
+        let heading4  = document.body.childNodes[4]
+        let heading5  = document.body.childNodes[5]
+
+
+        console.dir(document);
+        console.log(head);
+        console.log(heading);
+        console.log(heading1);
+        console.log(heading2);
+        console.log(heading3);
+        console.log(heading4);
+        console.log(heading5);
+
+
+        // const select = document.getElementsByClassName("hello")
+        const select = document.querySelectorAll(".hello")
+        const heselect = document.querySelectorAll("h3")
+        console.log(select);
+        console.log(heselect);
+
+    </script>
+</body>
+</html>

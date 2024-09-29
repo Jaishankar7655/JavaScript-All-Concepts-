@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+      rel="stylesheet"
+    />
+
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
+        margin-top: 100px;
+        width: 80%;
+        margin: 200px auto;
+      }
+      .box {
+        font-family: roboto;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        padding: 0px 50px;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease;
+        border-radius: 20px;
+      }
+      .box:hover {
+        transform: translateY(-10px);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="search" />
+    <div class="container"></div>
+    <script>
+      let array = [
+        {
+          Name: "Jaishankar Prasad jaiswal ",
+          Enroll: "0114CS221044",
+          Branch: "Computer science",
+        },
+        {
+          Name: "harshit",
+          Enroll: "0114CS221043",
+          Branch: "Electronic",
+        },
+        {
+          Name: "Salman khan  ",
+          Enroll: "0114CS221030",
+          Branch: "Civil",
+        },
+        {
+          Name: "Garima solanki",
+          Enroll: "0114CS221022",
+          Branch: "computer science",
+        },
+        {
+          Name: "Dhara jain",
+          Enroll: "0114CS221022",
+          Branch: "computer science",
+        },
+        {
+          Name: "Abhishek singh",
+          Enroll: "0114CS221022",
+          Branch: "computer science",
+        },
+        {
+          Name: "Ankit kumar ",
+          Enroll: "0114CS221022",
+          Branch: "computer science",
+        },
+        {
+          Name: "Avinash singh",
+          Enroll: "0114CS221022",
+          Branch: "computer science",
+        },
+        {
+          Name: "Raghu kumar",
+          Enroll: "0114CS221022",
+          Branch: "computer science",
+        },
+      ];
+
+      let btn = document.querySelector("btn");
+      function student(students) {
+        let container = document.querySelector(".container");
+        let div = document.createElement("div");
+        div.classList.add("box");
+        div.innerHTML = ` 
+        <p><h2>${students.Name}</h2></p>
+        <p><b>Enrollment number:  </b>${students.Enroll}</p>
+        <p><b>Branch:</b> ${students.Branch}</p> `;
+        container.append(div);
+        let selecteddiv = document.querySelectorAll(".div");
+        console.log(selecteddiv);
+        let search = document.querySelector("#search");
+
+      }
+      let result = array.map(student);
+
+      
+      
+    </script>
+  </body>
+</html>

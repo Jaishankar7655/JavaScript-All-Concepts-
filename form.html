@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netligent Technology - Student Registration</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      .container {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 1000px;
+        display: flex;
+        animation: fadeIn 0.5s ease-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .form-section {
+        flex: 1;
+        padding: 40px;
+      }
+      .preview-section {
+        flex: 1;
+        background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+        color: #ffffff;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      h1 {
+        color: #1a237e;
+        margin-bottom: 30px;
+        font-size: 28px;
+        text-align: center;
+        font-weight: 700;
+      }
+      .input-group {
+        margin-bottom: 20px;
+      }
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+        font-weight: 500;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+      .input-group input:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+      #sub {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 14px 24px;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        margin-top: 20px;
+      }
+      #sub:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .profile {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 30px;
+        border: 5px solid #ffffff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+      .profile:hover {
+        transform: scale(1.05);
+      }
+      .profile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+      .preview-section h1 {
+        color: white;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .preview-data p {
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .preview-data span {
+        font-weight: 700;
+        color: #ffeb3b;
+      }
+      .preview-data h3 {
+        margin: 30px 0 15px;
+        font-size: 20px;
+        color: #ffeb3b;
+      }
+      #ipr {
+        margin-top: 10px;
+      }
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          width: 100%;
+        }
+        .profile {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-section">
+        <h1>Student Registration Form</h1>
+        <div class="input-group">
+          <label for="iname">Full Name</label>
+          <input id="iname" type="text" placeholder="Enter your full name" />
+        </div>
+        <div class="input-group">
+          <label for="ifath">Father's Name</label>
+          <input id="ifath" type="text" placeholder="Enter your father's name" />
+        </div>
+        <div class="input-group">
+          <label for="imoth">Mother's Name</label>
+          <input id="imoth" type="text" placeholder="Enter your mother's name" />
+        </div>
+        <div class="input-group">
+          <label for="iocc">Batch Number </label>
+          <input id="iocc" type="text" placeholder="Enter your chosen program" />
+        </div>
+        <div class="input-group">
+          <label for="iadh">Student ID</label>
+          <input id="iadh" type="text" placeholder="Enter your student ID" />
+        </div>
+        <div class="input-group">
+          <label for="imob">Mobile</label>
+          <input id="imob" type="tel" placeholder="Enter your mobile number" />
+        </div>
+        <div class="input-group">
+          <label for="iema">Email</label>
+          <input id="iema" type="email" placeholder="Enter your email address" />
+        </div>
+        <div class="input-group">
+          <label for="ipr">Profile Picture</label>
+          <input id="ipr" type="file" />
+        </div>
+        <input id="sub" type="submit" value="Register" />
+      </div>
+      <div class="preview-section">
+        <h1>Welcome to Netligent Technology</h1>
+        <div class="profile">
+          <img
+            src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG.png"
+            alt="Profile img"
+          />
+        </div>
+        <div class="preview-data">
+          <p>Name: <span id="name"></span></p>
+          <p>Father's Name: <span id="fath"></span></p>
+          <p>Mother's Name: <span id="moth"></span></p>
+          <p>Program: <span id="occ"></span></p>
+          <p>Student ID: <span id="adh"></span></p>
+          <p>Mobile: <span id="mob"></span></p>
+          <p>Email: <span id="ema"></span></p>
+          <h3>About Us:</h3>
+          <p>
+            Netligent Technologies LLP is at the forefront of the IT industry, providing cutting-edge training and solutions. Our modern infrastructure and fresh, up-to-date content ensure you stay ahead in the rapidly evolving world of technology. Join us to experience excellence in IT education and services.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let name = document.querySelector("#name");
+      let fath = document.querySelector("#fath");
+      let moth = document.querySelector("#moth");
+      let occ = document.querySelector("#occ");
+      let adh = document.querySelector("#adh");
+      let mob = document.querySelector("#mob");
+      let ema = document.querySelector("#ema");
+      let submit = document.querySelector("#sub");
+      let profileimg = document.querySelector(".profile img");
+
+      submit.addEventListener("click", () => {
+        let iname = document.querySelector("#iname").value;
+        let ifath = document.querySelector("#ifath").value;
+        let imoth = document.querySelector("#imoth").value;
+        let iocc = document.querySelector("#iocc").value;
+        let iadh = document.querySelector("#iadh").value;
+        let imob = document.querySelector("#imob").value;
+        let iema = document.querySelector("#iema").value;
+        
+        name.innerText = iname;
+        fath.innerText = ifath;
+        moth.innerText = imoth;
+        occ.innerText = iocc;
+        adh.innerText = iadh;
+        mob.innerText = imob;
+        ema.innerText = iema;
+      });
+
+      let proffile = document.querySelector("#ipr");
+      proffile.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            profileimg.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    </script>
+  </body>
+</html>

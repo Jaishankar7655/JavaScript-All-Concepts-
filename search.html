@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        .container {
+            width: 80%;
+            box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 100px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .box {
+           
+            text-align: center;
+          
+            box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        p {
+            font-size: 23px;
+            margin: 10px 0px;
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+    <input id="search" type="search" placeholder="Search item here.....">
+    <div class="container"></div>
+
+    <script>
+        let data = [
+            { name: "Jaishankar Prasad Jaiswal", courses: "Web Development", branch: "Computer Science" },
+            { name: "Dhara Jain", courses: "DevOps", branch: "Cloud Computing" },
+            { name: "Garima", courses: "Frontend Developer", branch: "Electronic" },
+            { name: "Prince Kumar", courses: "Backend Developer", branch: "Computer Science" },
+            { name: "Anlji Kumari", courses: "UI/UX Designer", branch: "Computer Science" },
+            { name: "Nagendra", courses: "Backend Developer", branch: "Finance Department" },
+        ];
+
+        let container = document.querySelector(".container");
+
+        data.map((item) => {
+            var div = document.createElement("div");
+            div.classList.add("box");
+            div.innerHTML = `
+                <div class="box">
+                    <h1>${item.name}</h1>
+                    <h3>${item.branch}</h3>
+                    <p>${item.courses}</p>
+                </div>
+            `;
+            container.append(div);
+        });
+
+        let search = document.querySelector("#search");
+
+        search.addEventListener("input", (e) => {
+            let searchValue = e.target.value.toLowerCase();
+            let boxes = document.querySelectorAll(".box");
+
+            boxes.forEach((box) => {
+
+                let name = box.querySelector("h1").textContent.toLowerCase();
+                let branch = box.querySelector("h3").textContent.toLowerCase();
+                let courses = box.querySelector("p").textContent.toLowerCase();
+                if (name.includes(searchValue) || branch.includes(searchValue) || courses.includes(searchValue)) {
+                    box.style.display = "block";
+                } else {
+                    box.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

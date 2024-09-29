@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: poppins;
+      }
+      main {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+      }
+      .container1 {
+        width: 50%;
+        height: 100%;
+        border: 1px solid black;
+        overflow: hidden;
+        justify-content: space-around;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .container2 {
+        width: 50%;
+        height: 100%;
+        border: 1px solid black;
+        padding: 0px 30px;
+      }
+      .input1 input {
+        width: 250px;
+        padding: 5px;
+        border-radius: 5px;
+        outline: 0;
+        border: 1px solid #ccc;
+      }
+      .container2 h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .profile {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin: 30px auto;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .data p {
+        margin: 20px 0;
+        font-size: 25px;
+      }
+      .data span {
+        font-size: 20px;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container1">
+        <div class="input1">
+          <p>Name</p>
+          <input id="iname" type="text" />
+        </div>
+        <div class="input1">
+          <p>Father's Name</p>
+          <input id="ifath" type="text" />
+        </div>
+        <div class="input1">
+          <p>Mothers name</p>
+          <input id="imoth" type="text" />
+        </div>
+        <div class="input1">
+          <p>Occupation</p>
+          <input id="iocc" type="text" />
+        </div>
+        <div class="input1">
+          <p>Adhar card</p>
+          <input id="iadh" type="text" />
+        </div>
+        <div class="input1">
+          <p>Mobile</p>
+          <input id="imob" type="text" />
+        </div>
+        <div class="input1">
+          <p>Email</p>
+          <input id="iema" type="text" />
+        </div>
+        <div class="input1">
+          <p>Profile</p>
+          <input id="ipr" type="file" />
+        </div>
+        <div class="input1">
+          <p></p>
+          <input id="sub" type="submit" />
+        </div>
+      </div>
+      <div class="container2">
+        <h1>Welcome to Netligent Technology</h1>
+        <div class="main-profile">
+          <div class="profile">
+            <img
+              src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG.png"
+              alt="Profile img"
+            />
+          </div>
+          <div class="data">
+            <p>Name : <span id="name"></span></p>
+            <p>Father's Name: <span id="fath"></span></p>
+            <p>Mother's Name: <span id="moth"></span></p>
+            <p>Occupation Name: <span id="occ"></span></p>
+            <p>Adhar card number: <span id="adh"></span></p>
+            <p>Mobile: <span id="mob"></span></p>
+            <p>Email: <span id="ema"></span></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      
+      let name = document.querySelector("#name");
+      let fath = document.querySelector("#fath");
+      let moth = document.querySelector("#moth");
+      let occ = document.querySelector("#occ");
+      let adh = document.querySelector("#adh");
+      let mob = document.querySelector("#mob");
+      let ema = document.querySelector("#ema");
+      let submit = document.querySelector("#sub");
+      let profileimg = document.querySelector(".profile img")
+
+
+      
+      submit.addEventListener("click", () => {
+        let iname = document.querySelector("#iname").value;
+        let ifath = document.querySelector("#ifath").value;
+        let imoth = document.querySelector("#imoth").value;
+        let iocc = document.querySelector("#iocc").value;
+        let iadh = document.querySelector("#iadh").value;
+        let imob = document.querySelector("#imob").value;
+        let iema = document.querySelector("#iema").value;
+        
+        name.innerText = iname;
+        fath.innerText = ifath;
+        moth.innerText = imoth;
+        occ.innerText = iocc;
+        adh.innerText = iadh;
+        mob.innerText = imob;
+        ema.innerText = iema;
+      });
+      let proffile = document.querySelector("#ipr");
+      proffile.addEventListener("change" , (e)=>{
+        let img1 = e.target.value
+        console.log(e);
+        profileimg.src = img1
+
+      })
+    </script>
+  </body>
+</html>

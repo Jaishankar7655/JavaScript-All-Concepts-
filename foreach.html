@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Directory</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .box {
+            text-align: center;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .box h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .box p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #searchInput {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search by name...">
+        <button id="searchBtn">Search</button>
+        <button id="showAllBtn">Show All</button>
+        <button id="sortBtn">Sort by Name</button>
+    </div>
+    <div class="container"></div>
+
+    <script>
+        let students = [
+            { Name: "Jai", Enroll: "0114CS221044", Branch: "Computer Science" },
+            { Name: "Harshit", Enroll: "0114CS221043", Branch: "Electronic" },
+            { Name: "Amitesh Asati", Enroll: "0114CS221030", Branch: "Civil" },
+            { Name: "Muskan Khatarakar", Enroll: "0114CS221022", Branch: "Computer Science" },
+            { Name: "Arun Kumar", Enroll: "0114CS221010", Branch: "Mechanical" },
+        ];
+
+        const container = document.querySelector(".container");
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+        const showAllBtn = document.getElementById("showAllBtn");
+        const sortBtn = document.getElementById("sortBtn");
+
+        function displayStudents(studentsArray) {
+            container.innerHTML = '';
+            studentsArray.forEach(student => {
+                let div = document.createElement("div");
+                div.classList.add("box");
+                div.innerHTML = `
+                    <h3>${student.Name}</h3>
+                    <p><strong>Enroll:</strong> ${student.Enroll}</p>
+                    <p><strong>Branch:</strong> ${student.Branch}</p>
+                `;
+                container.append(div);
+            });
+        }
+
+        function searchStudents() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredStudents = students.filter(student => 
+                student.Name.toLowerCase().includes(searchTerm)
+            );
+            displayStudents(filteredStudents);
+        }
+        
+
+        function sortStudents() {
+            students.sort((a, b) => a.Name.localeCompare(b.Name));
+            displayStudents(students);
+        }
+
+        searchBtn.addEventListener("click", searchStudents);
+        showAllBtn.addEventListener("click", () => displayStudents(students));
+        sortBtn.addEventListener("click", sortStudents);
+
+        // Initial display
+        displayStudents(students);
+    </script>
+</body>
+</html>

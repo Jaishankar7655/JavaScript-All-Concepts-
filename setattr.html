@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 500px;
+        height: 400px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="img">
+      <h1>document object modal</h1>
+      <img
+        src="https://images.unsplash.com/photo-1721711323523-715ebf92e44a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam molestiae labore unde minima ipsum aliquam commodi modi, voluptatem maiores quis harum, nam corporis voluptas fugit, adipisci quasi eligendi iusto repudiandae?</p>
+    </div>
+
+    <script>
+      const image = document.querySelector("#img img");
+      image.addEventListener("click", () => {
+        image.setAttribute(
+          "src",
+          "https://images.unsplash.com/photo-1711320800287-ce9d5338c6f6?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        );
+      });
+    </script>
+  </body>
+</html>
